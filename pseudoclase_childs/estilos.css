@@ -19,7 +19,7 @@ li:last-child:hover{
     color: blueviolet;
 }
 
-li:nth-child(odd){
+li:nth-child(even){
     background-color: rgb(168, 30, 210);
     color: rgb(0, 0, 0);
 }
