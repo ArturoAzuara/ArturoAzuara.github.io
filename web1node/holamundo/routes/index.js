@@ -10,4 +10,7 @@ router.get('/ico', function(req,res,next){
   res.render('formulario', {titulo: 'Ejemplo'} );
 });
 
+router.post('/procesa', function(req, res, next){
+  res.render('resultado', {contenido: ok})
+});
 module.exports = router;
