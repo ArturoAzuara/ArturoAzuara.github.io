@@ -1,0 +1,104 @@
+
+Setting environment for using XAMPP for Windows.
+usuario@A930 c:\xampp
+#
+usuario@A930 c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> exit
+Bye
+
+usuario@A930 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database pampums;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| pampums            |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.018 sec)
+
+MariaDB [(none)]> create database librosdb;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> select librosdb
+    -> ;
+ERROR 1054 (42S22): Unknown column 'librosdb' in 'field list'
+MariaDB [(none)]> use librosdb;
+Database changed
+MariaDB [librosdb]> create table jamonconhuevo;
+ERROR 1113 (42000): A table must have at least 1 column
+MariaDB [librosdb]> create table libros(id INT auto_increment PRIMARY KEY, VARCHAR(50), autor VARCHAR(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VARCHAR(50), autor VARCHAR(50))' at line 1
+MariaDB [librosdb]> create table libros(id INT auto_increment PRIMARY KEY, titulo VARCHAR(50), autor VARCHAR(50));
+Query OK, 0 rows affected (0.008 sec)
+
+MariaDB [librosdb]> show tables;
++--------------------+
+| Tables_in_librosdb |
++--------------------+
+| libros             |
++--------------------+
+1 row in set (0.001 sec)
+
+MariaDB [librosdb]> describe libros:
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':' at line 1
+MariaDB [librosdb]> describe libros;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| titulo | varchar(50) | YES  |     | NULL    |                |
+| autor  | varchar(50) | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+3 rows in set (0.019 sec)
+
+MariaDB [librosdb]> select * from libros;
+Empty set (0.044 sec)
+
+MariaDB [librosdb]> INSERT INTO libros(titulo, autor) VALUES ('Fundacion','Isaac Asimov');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [librosdb]> select * from libros;
++----+-----------+--------------+
+| id | titulo    | autor        |
++----+-----------+--------------+
+|  1 | Fundacion | Isaac Asimov |
++----+-----------+--------------+
+1 row in set (0.000 sec)
+
+MariaDB [librosdb]> GRANT ALL ON libros.* to user1@'localhost' identified by 'patito123';
+Query OK, 0 rows affected (0.003 sec)
+
+MariaDB [librosdb]> flush priviliges;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'priviliges' at line 1
+MariaDB [librosdb]> flush privileges;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [librosdb]> GRANT ALL ON librosdb.* to user1@'localhost' identified by 'patito123';
+Query OK, 0 rows affected (0.001 sec)

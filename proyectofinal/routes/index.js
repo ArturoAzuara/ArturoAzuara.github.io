@@ -9,7 +9,14 @@ router.get('/', function(req, res, next) {
 
 router.get('/libros',(req, res, next) => {
   const sql = 'SELECT * FROM libros';
-
+  db.query(sql, (error, resultados) => {
+    if (error){
+      console.log('Error en la consulta', error );
+    }
+    res.render('libros', {libros : resultados});
+    //res.json(resultados);
+  } );
+ 
 });
 
 module.exports = router;

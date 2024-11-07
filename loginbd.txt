@@ -1,0 +1,57 @@
+
+Setting environment for using XAMPP for Windows.
+usuario@A930 c:\xampp
+# mysql -u user1 -p
+Enter password: *********
+ERROR 1045 (28000): Access denied for user 'user1'@'localhost' (using password: YES)
+
+usuario@A930 c:\xampp
+# mysql -u user1 -p
+Enter password: *********
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Bye
+
+usuario@A930 c:\xampp
+# mysql -u user1 -p
+Enter password: *********
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 12
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use libros;
+ERROR 1049 (42000): Unknown database 'libros'
+MariaDB [(none)]> use librosdb;
+Database changed
+MariaDB [librosdb]> show tables:
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':' at line 1
+MariaDB [librosdb]> show tables;
++--------------------+
+| Tables_in_librosdb |
++--------------------+
+| libros             |
++--------------------+
+1 row in set (0.001 sec)
+
+MariaDB [librosdb]> select * from libro;
+ERROR 1146 (42S02): Table 'librosdb.libro' doesn't exist
+MariaDB [librosdb]> select * from libros;
++----+-----------+--------------+
+| id | titulo    | autor        |
++----+-----------+--------------+
+|  1 | Fundacion | Isaac Asimov |
++----+-----------+--------------+
+1 row in set (0.000 sec)
+
+MariaDB [librosdb]>
