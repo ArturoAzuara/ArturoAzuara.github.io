@@ -1,0 +1,170 @@
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm start
+
+> segundapagina@0.0.0 start
+> node ./bin/www
+
+node:internal/modules/cjs/loader:1080
+  throw err;
+  ^
+
+Error: Cannot find module 'http-errors'
+Require stack:
+- C:\Users\usuario\web1node\web1\segundapagina\app.js
+- C:\Users\usuario\web1node\web1\segundapagina\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+    at Module._load (node:internal/modules/cjs/loader:922:27)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at Object.<anonymous> (C:\Users\usuario\web1node\web1\segundapagina\app.js:1
+:19)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\usuario\\web1node\\web1\\segundapagina\\app.js',
+    'C:\\Users\\usuario\\web1node\\web1\\segundapagina\\bin\\www'
+  ]
+}
+
+Node.js v18.17.1
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm install
+
+added 63 packages, and audited 64 packages in 4s
+
+11 vulnerabilities (1 low, 2 moderate, 5 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm start
+
+> segundapagina@0.0.0 start
+> node ./bin/www
+
+Port 3000 is already in use
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ netstat -ano | findstr :3000
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       11628
+  TCP    [::]:3000              [::]:0                 LISTENING       11628
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ taskkill /PID <PID> /F
+bash: PID: No such file or directory
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ PORT=3001 npm start
+
+> segundapagina@0.0.0 start
+> node ./bin/www
+
+GET / 200 108.610 ms - 204
+GET /stylesheets/style.css 200 8.523 ms - 111
+GET /favicon.ico 404 5.668 ms - 1297
+^C
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm install express-generator -g
+npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer suppor
+ted. Please update to mkdirp 1.x. (Note that the API surface has changed to use
+Promises in 1.x.)
+
+changed 10 packages in 2s
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ cat package.json
+{
+  "name": "segundapagina",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  }
+}
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm install mysql2
+
+added 12 packages, and audited 76 packages in 2s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+11 vulnerabilities (1 low, 2 moderate, 5 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ cat package.json
+{
+  "name": "segundapagina",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^3.11.4"
+  }
+}
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm install
+
+up to date, audited 76 packages in 1s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+11 vulnerabilities (1 low, 2 moderate, 5 high, 3 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+usuario@A930 MINGW64 ~/web1node/web1/segundapagina (main)
+$ npm start
+
+> segundapagina@0.0.0 start
+> node ./bin/www
+
+GET / 200 148.570 ms - 204
+GET /stylesheets/style.css 200 7.378 ms - 111
+

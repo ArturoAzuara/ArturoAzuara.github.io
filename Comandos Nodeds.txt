@@ -2,3 +2,4 @@ npm install
 npm start
 express --view hbs proyectofinal
 
+si se repite puerto: $ PORT=3001 npm start
